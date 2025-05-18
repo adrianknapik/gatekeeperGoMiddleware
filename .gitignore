@@ -1,0 +1,8 @@
+
+bin/ *.exe *.exe~ *.so *.dll
+
+
+.idea/ .vscode/
+
+
+*.log
