@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+	"log"
 )
 
 // Config a plugin konfigurációja
@@ -38,6 +39,7 @@ func New(_ context.Context, next http.Handler, config *Config, name string) (htt
 
 // ServeHTTP kezeli a kéréseket
 func (m *GatekeeperMiddleware) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
+	log.Infof("Processing request in %s middleware", m.name)
 	// Egyedi header-ek hozzáadása
 	req.Header.Set("X-Forwarded-Uri", req.RequestURI)
 	req.Header.Set("X-Forwarded-Method", req.Method)

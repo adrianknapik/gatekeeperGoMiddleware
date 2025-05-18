@@ -1,4 +1,4 @@
-module github.com/username/traefik-gatekeeper-middleware
+module github.com/adrianknapik/gatekeeperGoMiddleware.git
 
 go 1.16
 
